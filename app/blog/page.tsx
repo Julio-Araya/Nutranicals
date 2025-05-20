@@ -55,16 +55,54 @@ export default function BlogPage() {
         <div className="container px-4 md:px-6">
           <Tabs defaultValue="all" className="w-full">
             <div className="flex justify-center mb-8">
-              <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full max-w-3xl">
+              <TabsList className="grid grid-cols-2 md:grid-cols-6 w-full max-w-4xl">
                 <TabsTrigger value="all">Todos</TabsTrigger>
                 <TabsTrigger value="fundamentos">Fundamentos</TabsTrigger>
                 <TabsTrigger value="investigacion">Investigación</TabsTrigger>
                 <TabsTrigger value="guias">Guías Prácticas</TabsTrigger>
                 <TabsTrigger value="estilo">Estilo de Vida</TabsTrigger>
+                <TabsTrigger value="vitalidad">Vitalidad y Fertilidad</TabsTrigger>
               </TabsList>
             </div>
             <TabsContent value="all" className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Card>
+                  <CardHeader>
+                    <div className="overflow-hidden rounded-lg">
+                      <Image
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mesa%20de%20trabajo%202-100.jpg-Acb474kZ9NGlIV6Dz2soz4RaSeCJZ9.jpeg"
+                        alt="Pareja sosteniendo juntos pequeños calcetines de bebé con detalles amarillos"
+                        width={500}
+                        height={300}
+                        className="aspect-video object-cover transition-transform hover:scale-105"
+                      />
+                    </div>
+                    <div className="space-y-1 mt-4">
+                      <div className="inline-block rounded-full bg-[#86C6BA]/20 px-3 py-1 text-xs text-[#1A5F7A]">
+                        Vitalidad y Fertilidad
+                      </div>
+                      <CardTitle className="text-xl font-bold">
+                        NMN y fertilidad: ¿Una opción real para mujeres que quieren ser madres después de los 40?
+                      </CardTitle>
+                      <CardDescription>Publicado el 15 de mayo, 2023 • 10 min de lectura</CardDescription>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-500">
+                      Exploramos cómo el NMN podría ayudar a mejorar la fertilidad en mujeres mayores de 40 años a
+                      través de la regeneración celular y la energía mitocondrial.
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Link
+                      href="/blog/nmn-fertilidad"
+                      className="inline-flex items-center text-sm font-medium text-[#1A5F7A]"
+                    >
+                      Leer artículo
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </CardFooter>
+                </Card>
                 <Card>
                   <CardHeader>
                     <div className="overflow-hidden rounded-lg">
@@ -393,6 +431,56 @@ export default function BlogPage() {
               {/* Contenido similar para la categoría Estilo de Vida */}
               <div className="text-center py-12">
                 <p className="text-gray-500">Mostrando artículos de la categoría Estilo de Vida</p>
+              </div>
+            </TabsContent>
+            <TabsContent value="vitalidad" className="space-y-8">
+              {/* Contenido para la nueva categoría Vitalidad y Fertilidad */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Card>
+                  <CardHeader>
+                    <div className="overflow-hidden rounded-lg">
+                      <Image
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mesa%20de%20trabajo%202-100.jpg-Acb474kZ9NGlIV6Dz2soz4RaSeCJZ9.jpeg"
+                        alt="Pareja sosteniendo juntos pequeños calcetines de bebé con detalles amarillos"
+                        width={500}
+                        height={300}
+                        className="aspect-video object-cover transition-transform hover:scale-105"
+                      />
+                    </div>
+                    <div className="space-y-1 mt-4">
+                      <div className="inline-block rounded-full bg-[#86C6BA]/20 px-3 py-1 text-xs text-[#1A5F7A]">
+                        Vitalidad y Fertilidad
+                      </div>
+                      <CardTitle className="text-xl font-bold">
+                        NMN y fertilidad: ¿Una opción real para mujeres que quieren ser madres después de los 40?
+                      </CardTitle>
+                      <CardDescription>Publicado el 15 de mayo, 2023 • 10 min de lectura</CardDescription>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-500">
+                      Exploramos cómo el NMN podría ayudar a mejorar la fertilidad en mujeres mayores de 40 años a
+                      través de la regeneración celular y la energía mitocondrial.
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Link
+                      href="/blog/nmn-fertilidad"
+                      className="inline-flex items-center text-sm font-medium text-[#1A5F7A]"
+                    >
+                      Leer artículo
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </CardFooter>
+                </Card>
+                <div className="lg:col-span-2 flex items-center justify-center p-12 border border-dashed rounded-lg">
+                  <div className="text-center">
+                    <h3 className="text-lg font-medium text-gray-500 mb-2">Próximamente más artículos</h3>
+                    <p className="text-sm text-gray-400">
+                      Estamos trabajando en nuevos contenidos sobre vitalidad y fertilidad. ¡Vuelve pronto!
+                    </p>
+                  </div>
+                </div>
               </div>
             </TabsContent>
           </Tabs>
