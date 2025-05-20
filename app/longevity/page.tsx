@@ -29,33 +29,15 @@ export default function LongevityPage() {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="relative w-full max-w-[500px] aspect-video rounded-xl overflow-hidden shadow-xl">
+              <div className="relative w-full max-w-[500px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://placehold.co/600x400"
-                  alt="Video introductorio"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mesa%20de%20trabajo%201-100.jpg-HB7jQD7NxIgcWoW41YI4Kx49Mz27Io.jpeg"
+                  alt="Científico sosteniendo una muestra de alga en una esfera de cristal"
                   width={600}
                   height={400}
-                  className="object-cover"
+                  className="object-cover w-full h-auto"
+                  priority
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Button size="icon" className="w-16 h-16 rounded-full bg-white/90 text-[#1A7A8B] hover:bg-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-8 w-8"
-                    >
-                      <polygon points="5 3 19 12 5 21 5 3" />
-                    </svg>
-                    <span className="sr-only">Play</span>
-                  </Button>
-                </div>
               </div>
             </div>
           </div>
