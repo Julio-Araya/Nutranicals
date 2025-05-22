@@ -1,93 +1,64 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
+import ScienceSectionWithStats from "@/components/science-section-with-stats"
+import FeaturedBlogPosts from "@/components/featured-blog-posts"
+import Link from "next/link"
 
 export default function LongevityPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-[#1A7A8B]">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white">
-                  Nutrición para la longevidad basada en ciencia
-                </h1>
-                <p className="max-w-[600px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Descubre cómo el NMN y otros suplementos pueden potenciar tu salud celular y promover una vida más
-                  larga y saludable.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="bg-white text-[#1A7A8B] hover:bg-gray-100">Suscríbete al Newsletter</Button>
-                <Button variant="outline" className="text-white border-white hover:bg-white/20">
-                  Conoce más sobre NMN
+      {/* Hero Section - Full width with video background */}
+      <section className="relative w-full min-h-[90vh] flex items-center">
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute min-w-full min-h-full object-cover w-auto h-auto"
+            poster="/placeholder.svg?height=1080&width=1920"
+          >
+            <source
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Video-xGyqYVeBDD54QnZ7f4wK08Bz3LLZZM.mp4"
+              type="video/mp4"
+            />
+            Tu navegador no soporta videos HTML5.
+          </video>
+          {/* Overlay gradient for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1A7A8B]/80 to-[#1A7A8B]/40 z-10"></div>
+        </div>
+
+        {/* Content */}
+        <div className="container relative z-20 px-4 md:px-6">
+          <div className="max-w-2xl">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white">
+              Nutrición para la longevidad basada en ciencia
+            </h1>
+            <p className="mt-4 max-w-[600px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Descubre cómo el NMN y otros suplementos pueden potenciar tu salud celular y promover una vida más larga y
+              saludable.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Link href="/form">
+                <Button className="bg-white text-[#1A7A8B] hover:bg-white/90 font-medium">
+                  Suscríbete al Newsletter
                 </Button>
-              </div>
-            </div>
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-[500px] rounded-xl overflow-hidden shadow-xl">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mesa%20de%20trabajo%201-100.jpg-HB7jQD7NxIgcWoW41YI4Kx49Mz27Io.jpeg"
-                  alt="Científico sosteniendo una muestra de alga en una esfera de cristal"
-                  width={600}
-                  height={400}
-                  className="object-cover w-full h-auto"
-                  priority
-                />
-              </div>
+              </Link>
+              <Link href="/blog">
+                <Button className="bg-white text-[#1A7A8B] hover:bg-white/90 font-medium">
+                  Conoce más sobre el NMN
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#1A7A8B]">
-                La ciencia detrás del NMN
-              </h2>
-              <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                El Nicotinamida Mononucleótido (NMN) es un precursor del NAD+, una molécula crucial para el
-                funcionamiento celular. A medida que envejecemos, los niveles de NAD+ disminuyen, lo que se asocia con
-                diversos aspectos del envejecimiento.
-              </p>
-              <div className="flex gap-4">
-                <Link
-                  href="/blog/fundamentos-nmn"
-                  className="inline-flex h-10 items-center justify-center rounded-md bg-[#1A7A8B] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#1A7A8B]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1A7A8B]"
-                >
-                  Leer más
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-lg border bg-background p-6 shadow-sm">
-                <div className="text-3xl font-bold text-[#FF7F50]">300%</div>
-                <div className="text-sm text-gray-500">Aumento en estudios sobre NMN en los últimos 5 años</div>
-              </div>
-              <div className="rounded-lg border bg-background p-6 shadow-sm">
-                <div className="text-3xl font-bold text-[#FF7F50]">24%</div>
-                <div className="text-sm text-gray-500">Incremento en la vida útil en estudios con ratones</div>
-              </div>
-              <div className="rounded-lg border bg-background p-6 shadow-sm">
-                <div className="text-3xl font-bold text-[#FF7F50]">10%</div>
-                <div className="text-sm text-gray-500">Disminución anual de NAD+ a partir de los 40 años</div>
-              </div>
-              <div className="rounded-lg border bg-background p-6 shadow-sm">
-                <div className="text-3xl font-bold text-[#FF7F50]">50+</div>
-                <div className="text-sm text-gray-500">Ensayos clínicos en curso sobre NMN y longevidad</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ScienceSectionWithStats />
+
+      {/* Featured Blog Posts */}
+      <FeaturedBlogPosts />
     </div>
   )
 }
